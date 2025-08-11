@@ -1,0 +1,105 @@
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body {
+  padding: 5%;
+}
+
+.terminal {
+  position: relative;
+  width: 720px;
+  height: 480px;
+  //max-height: 432px;
+  //padding-bottom: 56.25%;
+  background-color: #222;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+  color: rgb(0, 255, 0);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,.5);
+  
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #eee;
+    //height: 25px;
+    padding: 6px;
+    span.button {
+      width: 13px;
+      height: 13px;
+      display: inline-block;
+      background-color: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 25px;
+      margin: 0 3px;
+    }
+  }
+  .console {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 25;
+    padding: 10px;
+    overflow: hidden;
+  }
+  span {
+    display: block;
+    margin-top: 3px;
+    &.danger {
+      color: #ff0000;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  animation: blink .3s linear alternate infinite;
+  pointer-events: none;
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: .3;
+    }
+  }
+}
+
+.alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 150;
+  transform: translate(-50%, -50%);
+  color: #ff0000;
+  font-size: 50px;
+  text-align: center;
+  animation: blink .3s linear alternate infinite;
+  pointer-events: none;
+}
